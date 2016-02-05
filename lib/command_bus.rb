@@ -1,7 +1,9 @@
 require 'command_bus/version'
-require 'thread_safe/cache'
+require 'thread_safe'
 
 class CommandBus
+  UnregisteredHandler = Class.new(StandardError)
+
   def initialize
     @handlers =
       ThreadSafe::Cache.new
@@ -12,9 +14,15 @@ class CommandBus
   end
 
   def call(command)
-    handlers[command.class].(command)
+    handlers
+      .fetch(command.class) { raise UnregisteredHandler.new(message(command))  }
+      .(command)
   end
 
   private
   attr_reader :handlers
+
+  def message(command)
+    "Missing handler for #{command.class}"
+  end
 end
