@@ -1,8 +1,13 @@
 # CommandBus
 
+> Command Pattern - decoupling what is done from who does it.
+
+
 Usage:
 
 ```
+require 'command_bus'
+
 command_bus = CommandBus.new
 register    = command_bus.method(:register)
 

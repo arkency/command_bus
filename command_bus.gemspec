@@ -9,9 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Paweł Pacana"]
   spec.email         = ["pawel.pacana@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Command Pattern - decoupling what is done from who does it.}
+  spec.homepage      = "https://github.com/pawelpacana/command_bus"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
