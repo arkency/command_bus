@@ -5,14 +5,14 @@
 
 Usage:
 
-```
+```ruby
 require 'command_bus'
 
 command_bus = CommandBus.new
 register    = command_bus.method(:register)
 
 { FooCommand => FooService.new(event_store: event_store).method(:foo),
-  BarCommand => FooService.new(event_store: event_store).method(:bar),
+  BarCommand => BarService.new,
 }.map(&:register)
 
 
