@@ -6,9 +6,9 @@
 Usage:
 
 ```ruby
-require 'command_bus'
+require 'wet/command_bus'
 
-command_bus = CommandBus.new
+command_bus = Wet::CommandBus.new
 register    = command_bus.method(:register)
 
 { FooCommand => FooService.new(event_store: event_store).method(:foo),
