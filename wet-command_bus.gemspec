@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dev@arkency.com"]
 
   spec.summary       = %q{Command Pattern - decoupling what is done from who does it.}
-  spec.homepage      = "https://github.com/wetrb/wet-command_bus"
+  spec.homepage      = "https://github.com/arkency/wet-command_bus"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
