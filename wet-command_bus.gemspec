@@ -6,8 +6,8 @@ require 'wet/command_bus/version'
 Gem::Specification.new do |spec|
   spec.name          = "wet-command_bus"
   spec.version       = Wet::CommandBus::VERSION
-  spec.authors       = ["Paweł Pacana"]
-  spec.email         = ["pawel.pacana@gmail.com"]
+  spec.authors       = ["Arkency"]
+  spec.email         = ["dev@arkency.com"]
 
   spec.summary       = %q{Command Pattern - decoupling what is done from who does it.}
   spec.homepage      = "https://github.com/wetrb/wet-command_bus"
