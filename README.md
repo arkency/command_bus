@@ -20,7 +20,6 @@ command_bus.(FooCommand.new)
 
 ```
 
-Now think how that makes your system simpler and use it or forget and move on.
 
 ## Convenience alias
 
