@@ -22,6 +22,14 @@ command_bus.(FooCommand.new)
 
 Now think how that makes your system simpler and use it or forget and move on.
 
+## Convenience alias
+
+```ruby
+require 'wet/command_bus/alias'
+```
+
+From now on you can use top-level `::CommandBus`.
+
 ## About
 
 <img src="http://arkency.com/images/arkency.png" alt="Arkency" width="20%" align="left" />
