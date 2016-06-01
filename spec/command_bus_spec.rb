@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'wet/command_bus'
+require 'arkency/command_bus'
 
-module Wet
+module Arkency
   RSpec.describe CommandBus do
     ::FooCommand = Class.new
 

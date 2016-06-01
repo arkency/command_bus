@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'wet/command_bus/version'
+require 'arkency/command_bus/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "wet-command_bus"
-  spec.version       = Wet::CommandBus::VERSION
+  spec.name          = "arkency-command_bus"
+  spec.version       = Arkency::CommandBus::VERSION
   spec.authors       = ["Arkency"]
   spec.email         = ["dev@arkency.com"]
 
   spec.summary       = %q{Command Pattern - decoupling what is done from who does it.}
-  spec.homepage      = "https://github.com/arkency/wet-command_bus"
+  spec.homepage      = "https://github.com/arkency/command_bus"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

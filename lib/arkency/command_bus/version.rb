@@ -1,4 +1,4 @@
-module Wet
+module Arkency
   class CommandBus
     VERSION = '0.3.0'
   end

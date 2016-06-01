@@ -1,14 +1,19 @@
-# Wet::CommandBus
+# Command Bus
 
 > Command Pattern - decoupling what is done from who does it.
 
+## Installation
+
+Notice this gem is namespaced.
+
+    gem install arkency-command_bus
 
 ## Usage
 
 ```ruby
-require 'wet/command_bus'
+require 'arkency/command_bus'
 
-command_bus = Wet::CommandBus.new
+command_bus = Arkency::CommandBus.new
 register    = command_bus.method(:register)
 
 { FooCommand => FooService.new(event_store: event_store).method(:foo),
@@ -24,7 +29,7 @@ command_bus.(FooCommand.new)
 ## Convenience alias
 
 ```ruby
-require 'wet/command_bus/alias'
+require 'arkency/command_bus/alias'
 ```
 
 From now on you can use top-level `::CommandBus`.

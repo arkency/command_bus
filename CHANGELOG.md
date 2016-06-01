@@ -1,3 +1,9 @@
+### 0.4.0
+
+* Find home under Arkency organization.
+* Rename namespace for less future confusion.
+* Convenience top-level alias.
+
 ### 0.3.0
 
 * Make sure there is only one handler per command registered.

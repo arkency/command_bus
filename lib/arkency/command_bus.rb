@@ -1,7 +1,7 @@
-require 'wet/command_bus/version'
+require 'arkency/command_bus/version'
 require 'thread_safe'
 
-module Wet
+module Arkency
   class CommandBus
     UnregisteredHandler = Class.new(StandardError)
     MultipleHandlers    = Class.new(StandardError)
