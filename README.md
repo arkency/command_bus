@@ -3,7 +3,7 @@
 > Command Pattern - decoupling what is done from who does it.
 
 
-Usage:
+## Usage
 
 ```ruby
 require 'wet/command_bus'
