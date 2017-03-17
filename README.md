@@ -32,20 +32,21 @@ In Rails `development` mode when you change a registered class, it is reloaded, 
 ```ruby
 a = User
 a.object_id
- => 40737760 
+# => 40737760 
 
 reload!
 # Reloading...
  
 b = User
 b.object_id
+# => 48425300
 
 h = {a => 1, b => 2}
 h[User]
 # => 2 
 
 a == b
- => false 
+# => false 
 ```
 
 so your `Hash` with mapping from command class to service may not find the new version of reloaded class.
