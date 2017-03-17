@@ -25,6 +25,16 @@ command_bus.(FooCommand.new)
 
 ```
 
+### New instance of a service for every command
+
+If need a new instance of a service every time it is called with a command or you want to lazily load the responsible services, you can just use `Proc` during registration.
+
+```ruby
+command_bus = Arkency::CommandBus.new
+command_bus.register(FooCommand, -> (foo_cmd) { FooService.new(event_store: event_store).foo(foo_cmd) })
+command_bus.register(BarCommand, -> (bar_cmd) { BarService.new.call(bar_cmd) })
+```
+
 ### Working with Rails development mode
 
 In Rails `development` mode when you change a registered class, it is reloaded, and a new class with same name is constructed. 
