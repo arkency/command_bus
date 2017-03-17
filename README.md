@@ -51,7 +51,7 @@ a == b
 
 so your `Hash` with mapping from command class to service may not find the new version of reloaded class.
 
-To workaround this problem you can use [`to_prepare`](http://api.rubyonrails.org/classes/Rails/Railtie/Configuration.html#method-i-to_prepare)
+To workaround this problem you can use [`to_prepare`](http://api.rubyonrails.org/classes/Rails/Railtie/Configuration.html#method-i-to_prepare) callback which is executed before every code reload in development, and once in production.
 
 ```ruby
 config.to_prepare do
