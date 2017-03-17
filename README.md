@@ -25,6 +25,49 @@ command_bus.(FooCommand.new)
 
 ```
 
+### Working with Rails development mode
+
+In Rails `development` mode when you change a registered class, it is reloaded, and a new class with same name is constructed. 
+
+```ruby
+a = User
+a.object_id
+ => 40737760 
+
+reload!
+# Reloading...
+ 
+b = User
+b.object_id
+
+h = {a => 1, b => 2}
+h[User]
+# => 2 
+
+a == b
+ => false 
+```
+
+so your `Hash` with mapping from command class to service may not find the new version of reloaded class.
+
+To workaround this problem you can use [`to_prepare`](http://api.rubyonrails.org/classes/Rails/Railtie/Configuration.html#method-i-to_prepare)
+
+```ruby
+config.to_prepare do
+  config.command_bus = Arkency::CommandBus.new
+  register = command_bus.method(:register)
+
+  { FooCommand => FooService.new(event_store: event_store).method(:foo),
+    BarCommand => BarService.new,
+  }.map(&:register)
+end
+```
+
+and call it with
+
+```ruby
+Rails.configuration.command_bus.call(FooCommand.new)
+```
 
 ## Convenience alias
 
