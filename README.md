@@ -102,6 +102,6 @@ Check our **Rails + Domain Driven Design Workshop** [more details](http://blog.a
 
 Why You should attend? Robert has explained this in [this blogpost](http://blog.arkency.com/2016/12/why-would-you-even-want-to-listen-about-ddd/).
 
-Next edition will be held on **25-26th May 2017** (Thursday & Friday) in Lviv, Ukraine.
+Next edition will be held in **September 2017** (Thursday & Friday) in Berlin, Germany.
 Workshop will be held in English.
 
