@@ -86,7 +86,7 @@ Rails.configuration.command_bus.call(FooCommand.new)
 require 'arkency/command_bus/alias'
 ```
 
-From now on you can use top-level `::CommandBus`.
+From now on you can use top-level `CommandBus` instead of `Arkency::CommandBus`.
 
 ## About
 
