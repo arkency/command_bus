@@ -18,7 +18,7 @@ register    = command_bus.method(:register)
 
 { FooCommand => FooService.new(event_store: event_store).method(:foo),
   BarCommand => BarService.new,
-}.map(&:register)
+}.map(&register)
 
 
 command_bus.(FooCommand.new)
@@ -70,7 +70,7 @@ config.to_prepare do
 
   { FooCommand => FooService.new(event_store: event_store).method(:foo),
     BarCommand => BarService.new,
-  }.map(&:register)
+  }.map(&register)
 end
 ```
 
