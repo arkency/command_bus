@@ -17,9 +17,9 @@ module Arkency
     end
 
     def call(command)
-      handlers
-        .fetch(command.class) { raise UnregisteredHandler.new("Missing handler for #{command.class}")  }
-        .(command)
+      handler = handlers.fetch(command.class) { raise UnregisteredHandler, "Missing handler for #{command.class}" }
+      handler = handler.new if Class === handler
+      handler.call(command)
     end
 
     private

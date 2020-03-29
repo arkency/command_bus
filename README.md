@@ -35,6 +35,14 @@ command_bus.register(FooCommand, -> (foo_cmd) { FooService.new(event_store: even
 command_bus.register(BarCommand, -> (bar_cmd) { BarService.new.call(bar_cmd) })
 ```
 
+Alternatively, you can register a Class and it will be instantiated per call, which provides the same behavior as `subscribe` in RailsEventStore.
+
+```ruby
+command_bus = Arkency::CommandBus.new
+command_bus.register(FooCommand, -> FooService)
+command_bus.register(BarCommand, -> BarService)
+```
+
 ### Working with Rails development mode
 
 In Rails `development` mode when you change a registered class, it is reloaded, and a new class with same name is constructed. 
