@@ -2,7 +2,11 @@ require 'spec_helper'
 require 'arkency/command_bus'
 
 module Arkency
-  class TestHandler
+  class TestClassHandler
+    def self.call(command); end
+  end
+
+  class TestInstanceHandler
     def call(command); end
   end
 
@@ -37,19 +41,33 @@ module Arkency
             .to(eq('Multiple handlers not allowed for FooCommand')) })
     end
 
-    specify 'class handler is instantiated per call' do
-      handler = instance_double(TestHandler)
+    specify 'class handler registered by class is invoked' do
+      handler = instance_double(TestClassHandler)
       command = ::FooCommand.new
 
       bus = CommandBus.new
-      bus.register(::FooCommand, TestHandler)
+      bus.register(::FooCommand, TestClassHandler)
 
-      allow(TestHandler).to receive(:new).and_return(handler)
+      allow(TestClassHandler).to receive(:call).and_return(command)
+
+      expect(bus.call(command)).to eq command
+
+      expect(TestClassHandler).to have_received(:call).with(command)
+    end
+
+    specify 'instance handler registered by class is instantiated per call' do
+      handler = instance_double(TestInstanceHandler)
+      command = ::FooCommand.new
+
+      bus = CommandBus.new
+      bus.register(::FooCommand, TestInstanceHandler)
+
+      allow(TestInstanceHandler).to receive(:new).and_return(handler)
       allow(handler).to receive(:call).and_return(command)
 
       expect(bus.call(command)).to eq command
 
-      expect(TestHandler).to have_received(:new)
+      expect(TestInstanceHandler).to have_received(:new)
       expect(handler).to have_received(:call).with(command)
     end
   end

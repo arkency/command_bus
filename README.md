@@ -35,36 +35,37 @@ command_bus.register(FooCommand, -> (foo_cmd) { FooService.new(event_store: even
 command_bus.register(BarCommand, -> (bar_cmd) { BarService.new.call(bar_cmd) })
 ```
 
-Alternatively, you can register a Class and it will be instantiated per call, which provides the same behavior as `subscribe` in RailsEventStore.
+Alternatively, you can register a Class and it will be instantiated per call.
 
 ```ruby
 command_bus = Arkency::CommandBus.new
-command_bus.register(FooCommand, -> FooService)
-command_bus.register(BarCommand, -> BarService)
+command_bus.register(FooCommand, FooService)
 ```
+
+If the Class, itself, defines `call`, the Class will continue to be used instead of instantiated.
 
 ### Working with Rails development mode
 
-In Rails `development` mode when you change a registered class, it is reloaded, and a new class with same name is constructed. 
+In Rails `development` mode when you change a registered class, it is reloaded, and a new class with same name is constructed.
 
 ```ruby
 a = User
 a.object_id
-# => 40737760 
+# => 40737760
 
 reload!
 # Reloading...
- 
+
 b = User
 b.object_id
 # => 48425300
 
 h = {a => 1, b => 2}
 h[User]
-# => 2 
+# => 2
 
 a == b
-# => false 
+# => false
 ```
 
 so your `Hash` with mapping from command class to service may not find the new version of reloaded class.
@@ -112,4 +113,3 @@ Why You should attend? Robert has explained this in [this blogpost](http://blog.
 
 Next edition will be held in **September 2017** (Thursday & Friday) in Berlin, Germany.
 Workshop will be held in English.
-
