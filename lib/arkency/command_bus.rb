@@ -1,5 +1,5 @@
 require 'arkency/command_bus/version'
-require 'thread_safe'
+require 'concurrent/map'
 
 module Arkency
   class CommandBus
@@ -8,7 +8,7 @@ module Arkency
 
     def initialize
       @handlers =
-        ThreadSafe::Cache.new
+        Concurrent::Map.new
     end
 
     def register(klass, handler)
