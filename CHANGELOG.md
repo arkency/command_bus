@@ -1,3 +1,7 @@
+### 0.4.1
+
+* replace `thread_safe` dependency with `concurrent-ruby`
+
 ### 0.4.0
 
 * Find home under Arkency organization.
