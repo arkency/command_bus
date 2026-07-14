@@ -90,7 +90,7 @@ From now on you can use top-level `CommandBus` instead of `Arkency::CommandBus`.
 
 ## About
 
-<img src="https://arkency.com/images/arkency.png" alt="Arkency" width="20%" align="left" />
+<img src="https://arkency.com/logo.svg" alt="Arkency" height="48" align="left" />
 
 Command Bus is funded and maintained by Arkency. Check out our other [open-source projects](https://github.com/arkency).
 
