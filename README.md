@@ -61,7 +61,7 @@ a == b
 
 so your `Hash` with mapping from command class to service may not find the new version of reloaded class.
 
-To workaround this problem you can use [`to_prepare`](http://api.rubyonrails.org/classes/Rails/Railtie/Configuration.html#method-i-to_prepare) callback which is executed before every code reload in development, and once in production.
+To workaround this problem you can use [`to_prepare`](https://api.rubyonrails.org/classes/Rails/Railtie/Configuration.html#method-i-to_prepare) callback which is executed before every code reload in development, and once in production.
 
 ```ruby
 config.to_prepare do
@@ -90,18 +90,9 @@ From now on you can use top-level `CommandBus` instead of `Arkency::CommandBus`.
 
 ## About
 
-<img src="http://arkency.com/images/arkency.png" alt="Arkency" width="20%" align="left" />
+<img src="https://arkency.com/images/arkency.png" alt="Arkency" width="20%" align="left" />
 
 Command Bus is funded and maintained by Arkency. Check out our other [open-source projects](https://github.com/arkency).
 
-You can also [hire us](http://arkency.com) or [read our blog](http://blog.arkency.com).
-
-## Learn more about DDD & Event Sourcing
-
-Check our **Rails + Domain Driven Design Workshop** [more details](http://blog.arkency.com/ddd-training/).
-
-Why You should attend? Robert has explained this in [this blogpost](http://blog.arkency.com/2016/12/why-would-you-even-want-to-listen-about-ddd/).
-
-Next edition will be held in **September 2017** (Thursday & Friday) in Berlin, Germany.
-Workshop will be held in English.
+You can also [hire us](https://arkency.com) or [read our blog](https://blog.arkency.com).
 
